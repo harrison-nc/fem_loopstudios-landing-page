@@ -21,8 +21,8 @@ const brand = "loopstudios";
   <body>
     <BaseLayout brand={brand} pageTitle={pageTitle}>
       <main>
-        <section>
-          <div class="container">
+        <section class="container">
+          <div class="two-columns">
             <picture>
               <source
                 srcset="/images/desktop/image-interactive.jpg"
@@ -45,8 +45,8 @@ const brand = "loopstudios";
             </div>
           </div>
         </section>
-        <section>
-          <div class="container">
+        <section class="container">
+          <div class="creations">
             <h2>Our creations</h2>
             <button class="more-creation-button">See all</button>
             <div class="even-columns">
@@ -145,17 +145,63 @@ const brand = "loopstudios";
     gap: var(--size-900);
     padding-block: var(--size-900);
   }
-  main > section:first-child > .container {
+  .two-columns {
     display: flex;
     flex-flow: column;
     gap: var(--size-600);
     text-align: center;
   }
 
-  main > section:first-child .title {
+  @media (min-width: 730px) {
+    .two-columns {
+      align-items: center;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .two-columns {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-auto-rows: 1fr;
+      justify-items: stretch;
+      gap: 0;
+      height: 500px;
+      justify-items: end;
+      align-items: end;
+    }
+
+    .two-columns > :first-child {
+      grid-column: 1 / 5;
+      grid-row: 1 / 10;
+    }
+
+    .two-columns > :last-child {
+      grid-column: 4 / 6;
+      grid-row: 4 / 10;
+      background-color: var(--clr-neutral-100);
+      padding: var(--size-200);
+      text-align: left;
+    }
+
+    .two-columns > :last-child h1 {
+      font-size: 28px;
+    }
+
+    .two-columns > :last-child p {
+      font-size: 15px;
+    }
+  }
+
+  @media (min-width: 950px) {
+    .two-columns > :last-child {
+      padding: var(--size-400);
+    }
+  }
+
+  .title {
     font-family: var(--ff-secondary);
     font-weight: var(--fw-100);
-    font-size: 48px;
+    font-size: 42px;
     text-transform: uppercase;
     color: var(--clr-neutral-400);
   }
@@ -171,7 +217,13 @@ const brand = "loopstudios";
     font-size: 20px;
   }
 
-  main > section:last-child h2 {
+  .creations {
+    display: flex;
+    flex-flow: column;
+    gap: var(--size-400);
+  }
+
+  .creations h2 {
     font-family: var(--ff-secondary);
     font-size: 32px;
     text-transform: uppercase;
@@ -179,40 +231,40 @@ const brand = "loopstudios";
     color: var(--clr-neutral-400);
   }
 
-  main > section:last-child > .container {
+  .creations > .container {
     display: flex;
     flex-flow: column;
     gap: var(--size-400);
   }
 
-  main > section:last-child article {
+  .creations article {
     display: grid;
     grid-template-columns: 1fr;
   }
 
-  main > section:last-child article > picture {
+  .creations article > picture {
     grid-column: 1;
     grid-row: 1 / 7;
   }
 
-  main > section:last-child article > picture img {
+  .creations article > picture img {
     height: 240px;
   }
 
   @media (min-width: 700px) {
-    main > section:last-child article > picture img {
+    .creations article > picture img {
       height: unset;
       width: 256px;
     }
   }
 
-  main > section:last-child article > p {
+  .creations article > p {
     grid-column: 1;
     grid-row: 5;
     padding-inline: var(--size-200);
   }
 
-  main > section:last-child p {
+  .creations p {
     color: var(--clr-neutral-100);
     font-size: 32px;
     text-transform: uppercase;
@@ -220,7 +272,7 @@ const brand = "loopstudios";
     font-family: var(--ff-secondary);
   }
 
-  main > section:last-child p > span {
+  .creations p > span {
     display: block;
   }
 
