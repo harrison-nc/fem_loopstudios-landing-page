@@ -1,0 +1,12 @@
+---
+import Navigation from "./Navigation.astro";
+import Attribution from "./Attribution.astro";
+const { brand } = Astro.props;
+---
+
+<footer>
+  <strong>{brand}</strong>
+  <Navigation />
+  <p>© 2021 Loopstudios. All rights reserved.</p>
+  <Attribution />
+</footer>

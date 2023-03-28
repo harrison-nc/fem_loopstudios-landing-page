@@ -1,0 +1,29 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/reset.css";
+import "../styles/global.css";
+
+const { pageTitle, brand } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <Header brand={brand} />
+    <slot />
+    <Footer brand={brand} />
+  </body>
+</html>

@@ -1,15 +1,48 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Frontend Mentor | Loopstudios landing page";
+const brand = "loopstudios";
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <BaseLayout brand={brand} pageTitle={pageTitle}>
+      <main>
+        <section>
+          <h1 class="title">The leader in interactive VR</h1>
+          <p>
+            Founded in 2011, Loopstudios has been producing world-class virtual
+            reality projects for some of the best companies around the globe.
+            Our award-winning creations have transformed businesses through
+            digital experiences that bind to their brand.
+          </p>
+        </section>
+        <section>
+          <h2>Our creations</h2>
+          <button>See all</button>
+          <article>Deep earth</article>
+          <article>Night arcade</article>
+          <article>Soccer team VR</article>
+          <article>The grid</article>
+          <article>From up above VR</article>
+          <article>Pocket borealis</article>
+          <article>The curiosity</article>
+          <article>Make it fisheye</article>
+        </section>
+      </main>
+    </BaseLayout>
+  </body>
 </html>
