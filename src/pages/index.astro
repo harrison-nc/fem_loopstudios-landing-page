@@ -17,18 +17,53 @@ const brand = "loopstudios";
       href="./images/favicon-32x32.png"
     />
     <title>{pageTitle}</title>
+    <style>
+      main > section:first-child {
+        display: flex;
+        flex-flow: column;
+        gap: var(--size-500);
+        padding: var(--size-800) var(--size-200);
+        text-align: center;
+      }
+
+      main > section:first-child .title {
+        font-family: var(--ff-secondary);
+        font-weight: var(--fw-100);
+        font-size: 48px;
+        text-transform: uppercase;
+        color: var(--clr-neutral-400);
+      }
+
+      picture + div {
+        display: flex;
+        flex-flow: column;
+        gap: var(--size-200);
+      }
+
+      picture + div > p {
+        line-height: 1.75em;
+        font-size: 20px;
+      }
+    </style>
   </head>
   <body>
     <BaseLayout brand={brand} pageTitle={pageTitle}>
       <main>
         <section>
-          <h1 class="title">The leader in interactive VR</h1>
-          <p>
-            Founded in 2011, Loopstudios has been producing world-class virtual
-            reality projects for some of the best companies around the globe.
-            Our award-winning creations have transformed businesses through
-            digital experiences that bind to their brand.
-          </p>
+          <picture>
+            <source srcset="/images/desktop/image-interactive.jpg" media="(min-width: 500px)">
+            <source srcset="/images/mobile/image-interactive.jpg" media="(max-width: 399px)">
+            <img src="/images/mobile/image-interactive.jpg" alt="">
+          </picture>
+          <div>
+            <h1 class="title">The leader in interactive VR</h1>
+            <p>
+              Founded in 2011, Loopstudios has been producing world-class virtual
+              reality projects for some of the best companies around the globe.
+              Our award-winning creations have transformed businesses through
+              digital experiences that bind to their brand.
+            </p>
+          </div>
         </section>
         <section>
           <h2>Our creations</h2>

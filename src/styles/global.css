@@ -22,6 +22,8 @@
   --size-500: 3rem;
   --size-600: 3.5rem;
   --size-700: 5.5rem;
+  --size-800: 6.5rem;
+  --size-900: 8rem;
 
   font-size: var(--fs-size);
   font-family: var(--ff-primary);
@@ -31,6 +33,7 @@
 
 img {
   display: block;
+  max-width: 100%;
 }
 
 /* Header and Navigation */
