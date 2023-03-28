@@ -4,9 +4,13 @@ import Hero from "./Hero.astro";
 const { brand } = Astro.props;
 ---
 
-<header>
-  <Navigation brand={brand} />
-  <Hero />
+<header class="primary-header">
+  <div class="container">
+      <div>
+        <Navigation hamburger={true} />
+        <Hero />
+      </div>
+  </div>
 </header>
 
 <style>
@@ -14,5 +18,17 @@ const { brand } = Astro.props;
     background-image: url(/images/mobile/image-hero.jpg);
     height: 100vh;
     height: 100dvh;
+    padding-block: var(--size-500)
+  }
+
+  .container {
+    min-height: 100%;
+    display: flex;
+  }
+  
+  .container > div {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
   }
 </style>

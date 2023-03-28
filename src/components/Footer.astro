@@ -1,12 +1,11 @@
 ---
 import Navigation from "./Navigation.astro";
 import Attribution from "./Attribution.astro";
-const { brand } = Astro.props;
 ---
 
-<footer>
-  <strong>{brand}</strong>
-  <Navigation />
+<footer class="primary-footer">
+  <img src="/image/logo.svg" alt="">
+  <Navigation hamburger={false} styleClass="secondary-nav" />
   <p>© 2021 Loopstudios. All rights reserved.</p>
   <Attribution />
 </footer>

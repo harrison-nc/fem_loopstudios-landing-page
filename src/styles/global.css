@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap");
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(0, 0%, 55%);
+  --clr-neutral-300: hsl(0, 0%, 41%);
+  --clr-neutral-400: hsl(0, 0%, 0%);
+
+  --fw-100: 300;
+  --fw-200: 400;
+
+  --fs-size: 15px;
+
+  --ff-primary: "Alata";
+  --ff-secondary: "Josefin Sans";
+
+  --size-100: 1rem;
+  --size-200: 1.5rem;
+  --size-250: 1.75rem;
+  --size-300: 2rem;
+  --size-400: 2.5rem;
+  --size-500: 3rem;
+  --size-600: 3.5rem;
+  --size-700: 5.5rem;
+
+  font-size: var(--fs-size);
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-200);
+  color: var(--clr-neutral-300);
+}
+
+img {
+  display: block;
+}
+
+/* Header and Navigation */
+
+.primary-nav {
+  min-height: 32px;
+}
+
+.primary-nav [data-toggle-menu] {
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+[data-mobile-menu] {
+  position: absolute;
+  inset: 0;
+  padding: var(--size-500) 5vw;
+  background-color: var(--clr-neutral-400);
+}
+
+[data-toggle-menu] a {
+  color: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+[data-menu-toggle-button] {
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: unset;
+}
+
+[data-menu-toggle-button] {
+  background-image: url(/images/icon-hamburger.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+[data-menu-toggle-button][data-open] {
+  background-image: url(/images/icon-close.svg);
+}
+
+[data-menu-toggle-button] ~ ul {
+  display: none;
+}
+
+[data-menu-toggle-button][data-open] ~ ul {
+  display: flex;
+  flex-flow: column;
+  color: var(--clr-neutral-100);
+  list-style: none;
+  gap: var(--size-300);
+  position: absolute;
+  inset: 15rem auto auto 5vw;
+}
+
+@media (min-width: 500px) {
+  [data-mobile-menu] {
+    width: 65vw;
+    width: 65dvw;
+    max-width: 400px;
+    left: unset;
+  }
+}
+
+/* Utilities */
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.container {
+  width: 90vw;
+  width: 90dvw;
+  margin: 0 auto;
+}
