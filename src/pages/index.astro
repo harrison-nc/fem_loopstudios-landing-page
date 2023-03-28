@@ -22,19 +22,21 @@ const brand = "loopstudios";
     <BaseLayout brand={brand} pageTitle={pageTitle}>
       <main>
         <section>
-          <picture>
-            <source srcset="/images/desktop/image-interactive.jpg" media="(min-width: 500px)">
-            <source srcset="/images/mobile/image-interactive.jpg" media="(max-width: 399px)">
-            <img src="/images/mobile/image-interactive.jpg" alt="">
-          </picture>
-          <div>
-            <h1 class="title">The leader in interactive VR</h1>
-            <p>
-              Founded in 2011, Loopstudios has been producing world-class virtual
-              reality projects for some of the best companies around the globe.
-              Our award-winning creations have transformed businesses through
-              digital experiences that bind to their brand.
-            </p>
+          <div class="container">
+            <picture>
+              <source srcset="/images/desktop/image-interactive.jpg" media="(min-width: 500px)">
+              <source srcset="/images/mobile/image-interactive.jpg" media="(max-width: 399px)">
+              <img src="/images/mobile/image-interactive.jpg" alt="">
+            </picture>
+            <div>
+              <h1 class="title">The leader in interactive VR</h1>
+              <p>
+                Founded in 2011, Loopstudios has been producing world-class virtual
+                reality projects for some of the best companies around the globe.
+                Our award-winning creations have transformed businesses through
+                digital experiences that bind to their brand.
+              </p>
+            </div>
           </div>
         </section>
         <section>
@@ -97,11 +99,16 @@ const brand = "loopstudios";
 </html>
 
 <style>
-  main > section:first-child {
+  main {
     display: flex;
     flex-flow: column;
-    gap: var(--size-800);
-    padding: var(--size-900) var(--size-200);
+    gap: var(--size-900);
+    padding-block: var(--size-900);
+  }
+  main > section:first-child > .container {
+    display: flex;
+    flex-flow: column;
+    gap: var(--size-600);
     text-align: center;
   }
 

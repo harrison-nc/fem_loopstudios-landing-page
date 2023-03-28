@@ -5,6 +5,7 @@ const { hamburger = false, styleClass = "primary-nav" } = Astro.props;
 <nav class={styleClass}>
   <div data-nav>
     <menu data-toggle-menu>
+      <a href="/" class="logo"><img src="/images/logo.svg" alt="" /></a>
       {
         hamburger && (
           <button data-menu-toggle-button>
@@ -19,7 +20,6 @@ const { hamburger = false, styleClass = "primary-nav" } = Astro.props;
         <li><a href="/">Products</a></li>
         <li><a href="/">Support</a></li>
       </ul>
-      <a href="/" class="logo"><img src="/images/logo.svg" alt="" /></a>
     </menu>
   </div>
 </nav>
