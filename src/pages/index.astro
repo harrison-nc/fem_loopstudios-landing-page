@@ -47,8 +47,10 @@ const brand = "loopstudios";
         </section>
         <section class="container">
           <div class="creations">
-            <h2>Our creations</h2>
-            <button class="more-creation-button">See all</button>
+            <header>
+              <h2>Our creations</h2>
+              <button class="more-creation-button">See all</button>
+            </header>
             <div class="even-columns">
               <article>
                 <picture>
@@ -131,6 +133,7 @@ const brand = "loopstudios";
                 <p><span>Make it</span> fisheye</p>
               </article>
             </div>
+            <button class="more-creation-button" data-mobile-button>See all</button>
           </div>
         </section>
       </main>
@@ -220,7 +223,7 @@ const brand = "loopstudios";
   .creations {
     display: flex;
     flex-flow: column;
-    gap: var(--size-400);
+    gap: var(--size-700);
   }
 
   .creations h2 {
@@ -276,7 +279,31 @@ const brand = "loopstudios";
     display: block;
   }
 
-  button {
+  button:not([data-mobile-button]) {
     display: none;
+  }
+
+  button {
+    border: 2px solid var(--clr-neutral-400);
+    border-radius: unset;
+    align-self: center;
+    padding: 0.75rem var(--size-400);
+    text-transform: uppercase;
+    background-color: var(--clr-neutral-100);
+  }
+
+  @media (min-width: 750px) {
+    button[data-mobile-button] {
+      display: none;
+    }
+    button:not([data-mobile-button]) {
+      display: inline;
+    }
+
+    .creations > header:first-of-type {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 </style>
