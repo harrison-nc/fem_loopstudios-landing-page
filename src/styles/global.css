@@ -156,6 +156,28 @@ img {
   text-align: center;
 }
 
+@media (min-width: 900px) {
+  .secondary-nav [data-toggle-menu] {
+    align-items: flex-start;
+  }
+
+  .secondary-nav ul {
+    flex-flow: row;
+  }
+
+  .primary-footer .container {
+    flex-flow: row;
+    justify-content: space-between;
+  }
+
+  .primary-footer .copyright {
+    align-items: flex-end;
+    gap: var(--size-300);
+    font-weight: var(--fw-200);
+    font-size: 18px;
+  }
+}
+
 /* Utilities */
 
 .visually-hidden {
