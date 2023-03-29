@@ -133,7 +133,9 @@ const brand = "loopstudios";
                 <p><span>Make it</span> fisheye</p>
               </article>
             </div>
-            <button class="more-creation-button" data-mobile-button>See all</button>
+            <button class="more-creation-button" data-mobile-button
+              >See all</button
+            >
           </div>
         </section>
       </main>
@@ -290,6 +292,16 @@ const brand = "loopstudios";
     padding: 0.75rem var(--size-400);
     text-transform: uppercase;
     background-color: var(--clr-neutral-100);
+    font-weight: var(--fw-200);
+    font-family: var(--ff-primary);
+    letter-spacing: 0.25em;
+  }
+
+  button:hover {
+    background-color: var(--clr-neutral-400);
+    color: var(--clr-neutral-100);
+    border-color: var(--clr-neutral-100);
+    transition: background-color 0.35s ease-out, color 0.25s ease-in;
   }
 
   @media (min-width: 750px) {
@@ -305,5 +317,21 @@ const brand = "loopstudios";
       justify-content: space-between;
       align-items: center;
     }
+  }
+
+  /* Transition and Animation */
+  article > picture {
+    transition: opacity 0.45s ease;
+  }
+  article:hover > picture {
+    opacity: 0.5;
+  }
+
+  article > p {
+    transition: color 0.6s ease-in-out;
+  }
+
+  article:hover > p {
+    color: var(--clr-neutral-400);
   }
 </style>

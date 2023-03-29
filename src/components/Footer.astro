@@ -1,18 +1,14 @@
 ---
 import Navigation from "./Navigation.astro";
 import Attribution from "./Attribution.astro";
+import Social from "./Social.astro";
 ---
 
 <footer class="primary-footer">
   <div class="container">
     <Navigation hamburger={false} styleClass="secondary-nav" />
     <div class="copyright">
-      <div class="social">
-        <img src="/images/icon-facebook.svg" alt="facebook">
-        <img src="/images/icon-twitter.svg" alt="twitter">
-        <img src="/images/icon-pinterest.svg" alt="pinterest">
-        <img src="/images/icon-instagram.svg" alt="instagram">
-      </div>
+      <Social />
       <p>© 2021 Loopstudios. All rights reserved.</p>
     </div>
   </div>
@@ -20,11 +16,6 @@ import Attribution from "./Attribution.astro";
 </footer>
 
 <style>
-  .social {
-    display: flex;
-    gap: 1em;
-  }
-
   .copyright {
     display: flex;
     flex-flow: column;

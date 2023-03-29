@@ -43,6 +43,28 @@ img {
 
 /* Header and Navigation */
 
+a {
+  display: inline-flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 0.4em;
+}
+
+a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: var(--clr-neutral-100);
+  opacity: 0;
+  transition: opacity 0.35s ease-in, width 0.55s ease;
+}
+
+a:hover::after {
+  opacity: 1;
+  width: 20px;
+}
+
 .primary-nav {
   min-height: 32px;
 }
